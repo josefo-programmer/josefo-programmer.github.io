@@ -1,0 +1,22 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Josefo</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 2rem; }
+    h1 { color: #007acc; }
+  </style>
+</head>
+<body>
+  <h1>Hola, soy Josefo 👋</h1>
+  <p>Desarrollador apasionado por el código y los desafíos.</p>
+  <h2>Proyectos</h2>
+  <ul>
+    <li><a href="https://github.com/josefo-programmer/proyecto1">Proyecto 1</a></li>
+    <li><a href="https://github.com/josefo-programmer/proyecto2">Proyecto 2</a></li>
+  </ul>
+</body>
+</html>
