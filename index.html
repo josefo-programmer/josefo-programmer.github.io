@@ -1,86 +1,254 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio de Joseff</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Nombre - Portafolio de Programación</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #e60012; /* Un rojo vibrante inspirado en Atlus */
+            --background-color: #121212;
+            --text-color: #f4f4f4;
+            --card-bg-color: #1e1e1e;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: url('URL_DE_TU_IMAGEN_DE_CABECERA_AQUI') no-repeat center center/cover;
+            height: 40vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            text-align: center;
+            position: relative;
         }
 
-        h1 {
-            color: #007acc;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #555;
+        header * {
+            z-index: 2;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-top: -75px;
+            position: relative;
+            z-index: 3;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            padding: 3rem 0;
         }
 
         h2 {
-            margin-top: 30px;
-            color: #333;
-            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
+        .card {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
         }
 
-        li {
-            margin: 10px 0;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            text-align: center;
         }
 
-        a {
+        .skill {
+            background: #2a2a2a;
+            padding: 1rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            background: var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg-color);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            color: #007acc;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        a:hover {
-            color: #005a99;
+        .btn:hover {
+            background: #ff3345;
         }
 
         footer {
-            position: absolute;
-            bottom: 10px;
-            color: #888;
-            font-size: 0.9rem;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background: #1e1e1e;
         }
     </style>
 </head>
-
 <body>
-    <h1>¡Hola, soy Joseff! 👋</h1>
-    <p>Desarrollador apasionado por el código, los desafíos y el aprendizaje constante.</p>
 
-    <h2>Mis Proyectos</h2>
-    <p>A continuación puedes elegir el proyecto que deseas ver:</p>
-    <ul>
-        <li><a href="https://github.com/josefo-programmer/proyecto2" target="_blank">Proyecto 2: Aplicación de gestión de tareas</a></li>
-        <li><a href="https://github.com/josefo-programmer/15-07-2025" target="_blank" title="Este es mi proyecto de grados, bienvenido a verlo, espero que te guste, pero más que todo, que te sirva">LOGICAP.AI: Inteligencia Artificial para optimización</a></li>
-    </ul>
+    <header>
+        <div class="container">
+            <h1>Tu Nombre</h1>
+            <p>Estudiante de Programación Java y Analítica de Datos</p>
+        </div>
+    </header>
+
+    <img src="URL_DE_TU_FOTO_DE_PERFIL" alt="Foto de perfil" class="profile-image">
+
+    <div class="container">
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <div class="card">
+                <p>
+                    Soy un apasionado estudiante de programación con 2 años de experiencia, especializado en el ecosistema de Java. Mi fascinación por las matemáticas me ha llevado a disfrutar profundamente de temas como matrices y vectores, y a aplicarlos en soluciones de software. Me desenvuelvo con soltura en entornos de desarrollo como IntelliJ IDEA, NetBeans y Visual Studio Code.
+                </p>
+                <p>
+                    Además de Java, tengo conocimientos en Python y estoy ampliando mi perfil hacia la analítica de datos, utilizando herramientas como Postman para la prueba de APIs, y gestionando bases de datos con phpMyAdmin. Mi objetivo es combinar el desarrollo de software robusto con el análisis de datos para crear soluciones completas e inteligentes.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill">Java</div>
+                <div class="skill">API REST</div>
+                <div class="skill">Python</div>
+                <div class="skill">Bases de Datos</div>
+                <div class="skill">Postman</div>
+                <div class="skill">phpMyAdmin</div>
+                <div class="skill">Excel (Datos)</div>
+                <div class="skill">IntelliJ IDEA</div>
+                <div class="skill">NetBeans</div>
+                <div class="skill">Visual Studio Code</div>
+                <div class="skill">Vectores</div>
+                <div class="skill">Matrices</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Mi+Proyecto+1" alt="Imagen del proyecto 1">
+                    <div class="project-content">
+                        <h3>Nombre del Proyecto 1</h3>
+                        <p>
+                            Aquí va una descripción breve y concisa de tu proyecto. Explica qué hace, qué tecnologías usaste y cuál fue tu rol.
+                        </p>
+                        <a href="#" class="btn" target="_blank">Ver Repositorio</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Mi+Proyecto+2" alt="Imagen del proyecto 2">
+                    <div class="project-content">
+                        <h3>Nombre del Proyecto 2</h3>
+                        <p>
+                            Aquí va una descripción breve y concisa de tu proyecto. Explica qué hace, qué tecnologías usaste y cuál fue tu rol.
+                        </p>
+                        <a href="#" class="btn" target="_blank">Ver Repositorio</a>
+                    </div>
+                </div>
+                
+                </div>
+        </section>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Joseff. Todos los derechos reservados.</p>
+        <p>&copy; 2024 - Creado por Tu Nombre</p>
     </footer>
+
 </body>
-
 </html>
-
